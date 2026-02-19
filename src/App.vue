@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PlayerList from './components/PlayerList.vue'
+import TeamList from './components/TeamList.vue'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import PlayerList from './components/PlayerList.vue'
     documentation
   </p>
   <PlayerList />
+  <TeamList />
 </template>
 
 <style scoped>
