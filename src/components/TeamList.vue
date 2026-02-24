@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Team } from '@/types/Team'
 import { onMounted, ref } from 'vue'
+import TeamCard from './TeamCard.vue'
 
 const teams = ref<Team[]>([])
 const loading = ref(true)
@@ -27,11 +28,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <ul>
-    <li v-for="team in teams" :key="team.ID">
-      {{ team.Name }}
-    </li>
-  </ul>
+  <div v-for="team in teams" :key="team.ID">
+    <TeamCard :team />
+  </div>
 </template>
 
 <style lang="css" scoped>

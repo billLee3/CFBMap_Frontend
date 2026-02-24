@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Player } from '@/types/Player'
 import { onMounted, ref } from 'vue'
+import PlayerCard from './PlayerCard.vue'
 
 const players = ref<Player[]>([])
 const loading = ref(true)
@@ -28,14 +29,22 @@ onMounted(() => {
 </script>
 
 <template>
-  <ul>
-    <li v-for="player in players" :key="player.PlayerID">
-      {{ player.FirstName }} {{ player.LastName }}
-    </li>
-  </ul>
+  <div class="container" v-for="player in players" :key="player.PlayerID">
+    <!-- {{ player.FirstName }} {{ player.LastName }} -->
+    <PlayerCard :player="player" />
+  </div>
 </template>
 
 <style scoped>
+.container {
+  display: flex;
+  direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 li {
   color: white;
 }
